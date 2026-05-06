@@ -1,4 +1,9 @@
 statement = input("Enter your statement:")
-def convert():
+def convert(sentance):
+    smile_converted = sentance.replace(":)", "🙂")
+    frown_converted = sentance.replace(":(","🙁")
     
+convert(statement)
+
+
 
