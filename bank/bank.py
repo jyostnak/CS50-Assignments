@@ -5,7 +5,7 @@ a=a.split()
 b="".join(a)
 if 'hello' in a:
     print("$0")
-elif 'h' in b:
+elif 'h' in b[0]:
     print('$20')
 else:
     print('$100')
