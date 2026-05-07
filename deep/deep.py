@@ -1,6 +1,8 @@
-a=input("What is the Answer to the Great Question of Life, the Universe, and Everything?")
-if a in ["42","forty two","forty-two"]:
+a = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+a = a.strip().lower()
+a = a.replace("-", " ")
+a = " ".join(a.split())
+if a == "42" or a == "forty two":
     print("Yes")
 else:
-    print("no")
-
+    print("No")
