@@ -10,7 +10,10 @@ app = ['pdf','zip']
 if set(name) & set(image):
     b=list(set(name) & set(image))
     b=''.join(b)
-    print("image/"+b)
+    if b=='jpg' or b=='jpeg':
+        print('image/jpeg')
+    else:
+        print("image/"+b)
 elif set(name) & set(app):
     b=list(set(name) & set(app))
     b=''.join(b)
