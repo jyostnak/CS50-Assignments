@@ -1,0 +1,2 @@
+camelFont = input("camelCase:")
+
