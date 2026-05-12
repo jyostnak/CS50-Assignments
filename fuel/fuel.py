@@ -14,7 +14,7 @@ def convert(n):
             if before > after:
                 raise ValueError
             if n.count('/') != 1:
-                raise ValueError
+                break
     if 0<=result<=1:
         print('E')
     elif 99<=result<=100:
