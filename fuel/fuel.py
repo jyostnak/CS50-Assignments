@@ -3,7 +3,7 @@ def convert(n):
     for ch in n:
         lst.append(ch)
     for i in range(len(lst)):
-        if n.count('/') != 1:
+        if lst.count('/') != 1:
             break
         elif lst[i] == '/':
             before = int(''.join(lst[:i]))
