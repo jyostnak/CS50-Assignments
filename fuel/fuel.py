@@ -13,7 +13,7 @@ def convert(n):
                 raise ValueError
             if before > after:
                 raise ValueError
-            if '/' not in n:
+            if n.count('/') != 1:
                 raise ValueError
     if 0<=result<=1:
         print('E')
