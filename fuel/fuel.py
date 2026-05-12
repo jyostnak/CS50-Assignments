@@ -3,7 +3,9 @@ def convert(n):
     for ch in n:
         lst.append(ch)
     for i in range(len(lst)):
-        if lst[i] == '/':
+        if n.count('/') != 1:
+            break
+        elif lst[i] == '/':
             before = int(''.join(lst[:i]))
             after = int(''.join(lst[i+1:]))
             result = (before/after)*100
@@ -13,8 +15,7 @@ def convert(n):
                 raise ValueError
             if before > after:
                 raise ValueError
-            if n.count('/') != 1:
-                break
+
     if 0<=result<=1:
         print('E')
     elif 99<=result<=100:
