@@ -18,7 +18,7 @@ def convert(n):
     elif 99<=result<=100:
         print('F')
     else:
-        print(f'{int(result)}%')
+        print(f'{round(result)}%')
 
 while True:
     try:
