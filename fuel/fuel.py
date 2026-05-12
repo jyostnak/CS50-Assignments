@@ -13,9 +13,9 @@ def convert(n):
                 raise ValueError
             if before > after:
                 raise ValueError
-    if 0<=result<1:
+    if 0<=result<=1:
         print('E')
-    elif 99<result<=100:
+    elif 99<=result<=100:
         print('F')
     else:
         print(f'{int(result)}%')
