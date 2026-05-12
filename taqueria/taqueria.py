@@ -9,15 +9,16 @@ menu = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
-def identify():
-    item = input('Item: ')
-    item = item.title()
-    print(f'Total: ${menu[item]}')
+total = 0
 
 while True:
     try:
-        identify()
+        item = input("Item: ").title()
+
+        if item in menu:
+            total += menu[item]
+            print(f"Total: ${total:.2f}")
+    except EOFError:
+        print()
         break
-    except KeyError:
-        pass
     
