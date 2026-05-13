@@ -14,5 +14,5 @@ while True:
     except EOFError:
         break
 
-for key, value in dicti.items():
-    print(value, key)
+for key in sorted(dicti):
+    print(dicti[key], key)
