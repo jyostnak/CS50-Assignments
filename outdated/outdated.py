@@ -13,7 +13,7 @@ months = [
     "December"
 ] #12-23-2007
 def convert():
-    n = input('Date: ')
+    n = input('Date: ').strip()
     if 11<=len(n)<=20:
         lst = n.split()
         if lst[0] in months:
