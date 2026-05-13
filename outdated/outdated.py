@@ -18,6 +18,8 @@ def convert():
         lst = n.split()
         if lst[0] in months:
             date = str(lst[1])
+            if ',' not in date:
+                raise ValueError
             date = date.replace(',','')
             if int(date)<1 or int(date)>31:
                 raise ValueError
