@@ -6,7 +6,8 @@ def main():
     score = 0
     for i in range(10):
 
-        x, y = generate_integer(level)
+        x = generate_integer(level)
+        y = generate_integer(level)
         ans = x + y
 
         for j in range(3):
@@ -39,18 +40,15 @@ def get_level():
 def generate_integer(level):
     if level == 1:
         x0 = random.randint(0, 9)
-        y0 = random.randint(0, 9)
-        return x0, y0
+        return x0
 
     if level == 2:
         x1 = random.randint(10, 99)
-        y1 = random.randint(10, 99)
-        return x1, y1
+        return x1
 
     if level == 3:
         x2 = random.randint(100, 999)
-        y2 = random.randint(100, 999)
-        return x2, y2
+        return x2
 
 
 
