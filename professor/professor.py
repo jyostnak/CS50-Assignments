@@ -3,6 +3,7 @@ import random
 
 def main():
     level = get_level()
+    score = 0
     for i in range(10):
 
         x, y = generate_integer(level)
@@ -11,12 +12,15 @@ def main():
         for j in range(3):
             user_ans = input((f'{x} + {y} = '))
             if str(ans) == user_ans:
+                score += 1
                 break
             else:
                 print('EEE')
 
                 if j == 2:
                     print(f"{x} + {y} = {ans}")
+
+    print(score)
 
 
 def get_level():
