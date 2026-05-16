@@ -1,0 +1,55 @@
+import random
+
+
+def main():
+    level = get_level()
+    for i in range(10):
+
+        x, y = generate_integer(level)
+        ans = x + y
+
+        for j in range(3):
+            user_ans = input((f'{x} + {y} = '))
+            if str(ans) == user_ans:
+                break
+            else:
+                print('EEE')
+
+                if j == 2:
+                    print(f"{x} + {y} = {ans}")
+
+
+def get_level():
+    while True:
+        try:
+            level = int(input('Level: '))
+            levels = [1,2,3]
+            if level not in levels:
+                raise ValueError
+            break
+        except ValueError:
+            pass
+    return level
+
+
+def generate_integer(level):
+    if level == 1:
+        x0 = random.randint(0, 9)
+        y0 = random.randint(0, 9)
+        return x0, y0
+
+    if level == 2:
+        x1 = random.randint(10, 99)
+        y1 = random.randint(10, 99)
+        return x1, y1
+
+    if level == 3:
+        x2 = random.randint(100, 999)
+        y2 = random.randint(100, 999)
+        return x2, y2
+
+
+
+
+if __name__ == "__main__":
+    main()
