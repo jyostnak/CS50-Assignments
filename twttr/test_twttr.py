@@ -9,5 +9,9 @@ def test_myname():
 def test_calender():
     assert shorten('Calender0') == 'Clndr0'
 
+def test_sentance():
+    assert shorten('Hello, world') == 'Hll, wrld'
 
+def test_capvowels():
+    
 
