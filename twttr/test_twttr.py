@@ -7,5 +7,7 @@ def test_myname():
     assert shorten('jyostna') == 'jystn'
 
 def test_calender():
-    assert shorten('Calender') == 'Clndr'
+    assert shorten('Calender0') == 'Clndr0'
+
+
 
