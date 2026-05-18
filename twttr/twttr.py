@@ -16,7 +16,8 @@ def shorten(word):
 
         else:
             i+=1
-    return input_list
+    output = ''.join(input_list)
+    return output
 
 if __name__ == '__main__':
     main()
