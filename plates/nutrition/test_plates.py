@@ -17,3 +17,9 @@ def test_alphanum0():
 
 def test_num():
     assert is_valid("50") == False
+
+def test_punc():
+    assert is_valid("HELLO_") == False
+
+def test_numplace():
+    assert is_valid("N67KM") == False
