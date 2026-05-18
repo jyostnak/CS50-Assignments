@@ -1,15 +1,24 @@
-word = input("Input:")
-input_list = []
-for ch in word:
-    input_list.append(ch)
-i = 0
-vowels = ['a','e','i','o','u']
-while i<len(input_list):
-    if input_list[i].lower() in vowels:
-        input_list.pop(i)
+def main():
 
-    else:
-        i+=1
+    word = input("Input:")
+    print(f'Output: {shorten(word)}')
 
-output = ''.join(input_list)
-print(output)
+def shorten(word):
+
+    input_list = []
+    for ch in word:
+        input_list.append(ch)
+    i = 0
+    vowels = ['a','e','i','o','u']
+    while i<len(input_list):
+        if input_list[i].lower() in vowels:
+            input_list.pop(i)
+
+        else:
+            i+=1
+    return input_list
+
+if __name__ == '__main__':
+    main()
+
+
