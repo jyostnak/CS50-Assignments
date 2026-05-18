@@ -6,6 +6,16 @@ def test_convert():
     assert convert('1/4') == (1/4)*100
     assert convert('0/4') == 0
 
+def test_errors():
+    with pytest.raises(ValueError):
+        convert("5/4")
+
+    with pytest.raises(ValueError):
+        convert("-1/4")
+
+    with pytest.raises(ZeroDivisionError):
+        convert("1/0")
+
 def test_gauge():
     assert gauge(0) == 'E'
     assert gauge(0.7) == 'E'
