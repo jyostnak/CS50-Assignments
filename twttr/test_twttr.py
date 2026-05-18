@@ -13,5 +13,5 @@ def test_sentance():
     assert shorten('Hello, world') == 'Hll, wrld'
 
 def test_capvowels():
-    
+    assert shorten('Alone') == 'ln'
 
