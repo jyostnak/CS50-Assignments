@@ -22,4 +22,4 @@ def test_punc():
     assert is_valid("HELLO_") == False
 
 def test_numplace():
-    assert is_valid("N67KM") == False
+    assert is_valid("CS50P") == False
