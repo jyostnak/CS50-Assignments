@@ -19,18 +19,23 @@ def convert(n):
 
 def gauge(result):
     if 0<=result<=1:
-        print('E')
+        return "E"
     elif 99<=result<=100:
-        print('F')
+        return "F"
     else:
-        print(f'{round(result)}%')
+        return f'{round(result)}%'
 
-while True:
-    try:
-        convert(input('Fraction: '))
-        break
-    except ValueError:
-        pass
-    except ZeroDivisionError:
-        pass
+def main():
+    while True:
+        try:
+            result = convert(input('Fraction: '))
+            final = gauge(result)
+            print(final)
+            break
+        except ValueError:
+            pass
+        except ZeroDivisionError:
+            pass
 
+if __name__ == '__main__':
+    main()
