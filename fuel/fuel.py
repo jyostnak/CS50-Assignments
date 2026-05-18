@@ -15,7 +15,9 @@ def convert(n):
                 raise ValueError
             if before > after:
                 raise ValueError
+    return result
 
+def gauge(result):
     if 0<=result<=1:
         print('E')
     elif 99<=result<=100:
