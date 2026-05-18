@@ -20,7 +20,9 @@ def test_errors():
 def test_gauge():
     assert gauge(0) == 'E'
     assert gauge(0.7) == 'E'
+    assert gauge(1) == 'E'
     assert gauge(56) == '56%'
+    assert gauge(99) == 'F'
     assert gauge(99.7) == 'F'
     assert gauge(100) == 'F'
 
