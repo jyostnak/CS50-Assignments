@@ -11,12 +11,9 @@ def parse(s):
     if match := re.search(pattern, s):
         link = re.sub(r"(www.)?/embed", "", match)
         return link
-    
+    return None
 
 
-
-
-...
 
 
 if __name__ == "__main__":
