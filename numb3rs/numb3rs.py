@@ -15,7 +15,7 @@ def validate(ip):
                return False
            if len(num)>1 and num.startswith('0'):
                return False
-           return True
+    return True
     return False
 
 
