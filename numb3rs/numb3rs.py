@@ -13,7 +13,7 @@ def validate(ip):
        for num in address:
            if int(num) > 255:
                return False
-           if len(int(num))>1 and num.startswith('0'):
+           if len(num)>1 and num.startswith('0'):
                return False
            return True
     return False
