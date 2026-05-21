@@ -10,7 +10,7 @@ def validate(ip):
     pattern = r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$"
     if re.search(pattern, ip):
        address = ip.split('.')
-       for num in address:
+       for int(num) in address:
            if num > 255:
                return False
            return True
