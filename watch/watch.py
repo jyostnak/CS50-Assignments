@@ -9,7 +9,7 @@ def main():
 def parse(s):
     pattern = r"https?://(www.)?youtube\.com/embed/(.+)"
     if match := re.search(pattern, s):
-        link = 
+        link = re.sub(r"")
 
 
 
