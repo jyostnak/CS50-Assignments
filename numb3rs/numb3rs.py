@@ -7,9 +7,10 @@ def main():
 
 
 def validate(ip):
-    pattern = r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$"
+    pattern = r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$"
     if re.search(pattern, ip):
         
+
 
 
 
