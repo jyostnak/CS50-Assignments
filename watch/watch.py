@@ -8,8 +8,10 @@ def main():
 
 def parse(s):
     pattern = r"https?://(www.)?youtube\.com/embed/.+"
-    match = re.search(pattern, s)
-    
+    if match := re.search(pattern, s):
+        match
+
+
 
 
 ...
