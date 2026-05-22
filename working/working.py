@@ -15,7 +15,7 @@ def convert(s):
             raise ValueError
         if match.group(3) == 'PM':
             hr = int(match.group(1)) + 12
-            return r""
+            return r"{hr}:{match.group(2)}"
         if match.group(6) == 'PM':
             hr_ = int(match.group(4)) + 12
 
