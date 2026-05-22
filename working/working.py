@@ -30,8 +30,15 @@ def convert(s):
 
         if p1 == 'PM':
             h1 = h1 + 12
+        if p1 == 'AM':
+            if h1 == '12':
+                h1 = '00'
+                
         if p2 == 'PM':
             h2 = h2 + 12
+         if p2 == 'AM':
+            if h2 == '12':
+                h2 = '00'
 
 
 
