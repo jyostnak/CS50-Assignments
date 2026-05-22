@@ -17,6 +17,9 @@ def convert(s):
         m2 = match.group(5)
         p2 = match.group(6)
 
+        if m1>60 or m2>60:
+            raise ValueError
+
         if m1 is None:
             m1 = '00'
         if m2 is None:
@@ -24,7 +27,14 @@ def convert(s):
 
         if h1>12 or h2>12:
             raise ValueError
-        
+
+        if p1 == 'PM':
+            h1 = h1 + 12
+        if p2 == 'PM':
+            h2 = h2 + 12
+
+
+
 
 
 
