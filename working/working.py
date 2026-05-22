@@ -26,7 +26,7 @@ def convert(s):
     if m2 is None:
         m2 = '00'
 
-    if int(m1)>60 or int(m2)>60:
+    if int(m1)>=60 or int(m2)>=60:
         raise ValueError
 
     if h1>12 or h2>12:
