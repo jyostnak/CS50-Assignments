@@ -21,13 +21,13 @@ def convert(s):
     m2 = (match.group(5))
     p2 = match.group(6)
 
-    if int(m1)>60 or int(m2)>60:
-        raise ValueError
-
     if m1 is None:
         m1 = '00'
     if m2 is None:
         m2 = '00'
+
+    if int(m1)>60 or int(m2)>60:
+        raise ValueError
 
     if h1>12 or h2>12:
         raise ValueError
