@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    pattern = r"(\d):?(\d) (AM|PM) to (\d):?(\d)? (AM|PM)"
+    pattern = r"^(\d{1,2})(?::(\d{2}))? (AM|PM) to (\d{1,2})(?::(\d{2}))? (AM|PM)$"
     match = re.search(pattern, s)
 
     if not match:
