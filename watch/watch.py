@@ -7,7 +7,7 @@ def main():
 
 
 def parse(s):
-    pattern  = r'src="https?://(www\.)?youtube\.com/embed/(.+)"'
+    pattern  = r'^<iframe src="https?://(www\.)?youtube\.com/embed/(.+)"'
     if match := re.search(pattern, s):
         return f"https://youtu.be/{match.group(2)}"
     else:
