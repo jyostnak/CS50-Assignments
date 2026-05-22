@@ -10,4 +10,4 @@ def test_convertcorrect():
 def test_convertincor():
     with pytest.raises(ValueError):
         convert('9:65 AM to 5:00 PM')
-        
+        convert('9 AM until 5 PM')
