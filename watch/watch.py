@@ -7,12 +7,11 @@ def main():
 
 
 def parse(s):
-    pattern = r"^https?://(www.)?youtube\.com/embed/.+$"
+    pattern  = r"^https?://(www\.)?youtube\.com/embed/(.+)$"
     if match := re.search(pattern, s):
-        link = re.sub(r"(www.)?/embed", "", match)
-        return link
-    return None
-
+        return f"https://youtu.be/{match.group(2)}"
+    else:
+        return None
 
 
 
