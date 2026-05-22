@@ -9,15 +9,23 @@ def main():
 def convert(s):
     pattern = r"(\d):?(\d)?(AM|PM) to (\d):?(\d)?(AM|PM)"
     if match := re.search(pattern, s):
-        if int(match.group(1))>12 or int(match.group(4))>12:
+        h1 = match.group(1)
+        m1 = match.group(2)
+        p1 = match.group(3)
+
+        h2 = match.group(4)
+        m2 = match.group(5)
+        p2 = match.group(6)
+
+        if m1 is None:
+            m1 = '00'
+        if m2 is None:
+            m2 = '00'
+
+        if h1>12 or h2>12:
             raise ValueError
-        if match.group(2)>60 or int(match.group(5))>60:
-            raise ValueError
-        if match.group(3) == 'PM':
-            hr = int(match.group(1)) + 12
-            return r"{hr}:{match.group(2)}"
-        if match.group(6) == 'PM':
-            hr_ = int(match.group(4)) + 12
+        
+
 
 
 
