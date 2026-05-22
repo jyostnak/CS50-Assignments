@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    pattern = r""
+    pattern = r"(\d)"
 
 
 ...
