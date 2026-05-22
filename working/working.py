@@ -32,23 +32,19 @@ def convert(s):
     if h1>12 or h2>12:
         raise ValueError
 
-    if p1 == 'PM':
+    if p1 == "AM":
         if h1 == 12:
             h1 = 0
-        else:
-            h1 = h1 + 12
-    if p1 == 'AM':
-        if h1 == 12:
-            h1 = 0
+    else:
+        if h1 != 12:
+            h1 += 12
 
-    if p2 == 'PM':
+    if p2 == "AM":
         if h2 == 12:
             h2 = 0
-        else:
-            h2 = h2 + 12
-    if p2 == 'AM':
-        if h2 == 12:
-            h2 = 0
+    else:
+        if h2 != 12:
+            h2 += 12
 
     return f"{h1:02}:{m1} to {h2:02}:{m2}"
 
