@@ -12,3 +12,4 @@ def test_convertincor():
         convert('9:65 AM to 5:00 PM')
         convert('9 AM until 5 PM')
         convert('9 AM - 5PM')
+        convert('9:00 AM to 17:00 PM')
