@@ -14,7 +14,9 @@ def convert(s):
         if match.group(2)>60 or int(match.group(5))>60:
             raise ValueError
         if match.group(3) == 'PM':
-            hr = 
+            hr = int(match.group(1)) + 12
+        if match.group(6) == 'PM':
+            hr_ = int(match.group(4)) + 12
 
 
 
