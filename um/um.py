@@ -8,10 +8,9 @@ def main():
 
 def count(s):
     pattern = r" um"
-    
+    count = len(re.findall(pattern, s))
+    return count
 
-
-...
 
 
 if __name__ == "__main__":
