@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    pattern = r"[0-12]:"
+    pattern = r"[0-12]:?[0-6]?[0-9]? to "
 
 
 ...
