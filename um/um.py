@@ -7,8 +7,8 @@ def main():
 
 
 def count(s):
-    pattern = r" um"
-    count = len(re.findall(pattern, s))
+    pattern = r"\bum\b"
+    count = len(re.findall(pattern, s, re.IGNORECASE))
     return count
 
 
