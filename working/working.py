@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    pattern = r"(\d):?(\d)"
+    pattern = r"(\d):?(\d)?(AM|PM)"
 
 
 ...
