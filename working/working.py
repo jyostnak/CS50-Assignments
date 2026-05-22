@@ -12,48 +12,46 @@ def convert(s):
 
     if not match:
         raise ValueError
-    
+
     h1 = int(match.group(1))
-    m1 = int(match.group(2))
+    m1 = (match.group(2))
     p1 = match.group(3)
 
     h2 = int(match.group(4))
-    m2 = int(match.group(5))
+    m2 = (match.group(5))
     p2 = match.group(6)
 
-    if m1>60 or m2>60:
+    if int(m1)>60 or int(m2)>60:
         raise ValueError
 
     if m1 is None:
-        m1 = 00
+        m1 = '00'
     if m2 is None:
-        m2 = 00
+        m2 = '00'
 
     if h1>12 or h2>12:
         raise ValueError
 
     if p1 == 'PM':
-        h1 = h1 + 12
+        if h1 == 12:
+            h1 = 0
+        else:
+            h1 = h1 + 12
     if p1 == 'AM':
         if h1 == 12:
-            h1 = 00
+            h1 = 0
 
     if p2 == 'PM':
-        h2 = h2 + 12
+        if h2 == 12:
+            h2 = 0
+        else:
+            h2 = h2 + 12
     if p2 == 'AM':
         if h2 == 12:
-            h2 = 00
+            h2 = 0
 
+    return f"{h1:02}:{m1} to {h2:02}:{m2}"
 
-
-
-
-
-
-
-
-
-...
 
 
 if __name__ == "__main__":
