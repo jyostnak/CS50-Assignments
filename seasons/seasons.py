@@ -4,7 +4,7 @@ import inflect
 
 
 def main():
-    ...
+    bday = input("Date of birth: ")
 
 
 ...
