@@ -7,8 +7,9 @@ import re
 def main():
     bday = input("Date of birth: ")
     pattern = r"\d{4}-\d{2}-\d{2}"
-    match = re.search(pattern, bday)
-
+    if not re.fullmatch(pattern, bday):
+        sys.exit('Invalid date')
+    year, month, date_ = bday.split('-')
 
 ...
 
