@@ -11,6 +11,7 @@ def main():
         sys.exit('Invalid date')
     year, month, date_ = bday.split('-')
     today = date.today()
+    curr_year = today.year
     
 
 ...
