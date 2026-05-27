@@ -5,25 +5,20 @@ import re
 
 
 def main():
+    p = inflect.engine()
     bday = input("Date of birth: ")
     pattern = r"\d{4}-\d{2}-\d{2}"
     if not re.fullmatch(pattern, bday):
         sys.exit('Invalid date')
     year, month, date_ = bday.split('-')
     today = date.today()
-    curr_year = today.year
-    if int(month) >= today.month:
-        if int(date_) >= today.date
-            diff = curr_year - int(year)
-    else:
-        diff = curr_year - int(year) - 1
-    
+    bdate = date(int(year), int(month), int(date_))
+    diff = today - bdate
+    days = diff.days
+    number = days*24*60
+    return p.number_to_words(number, andword='')
 
 
-
-
-
-...
 
 
 if __name__ == "__main__":
