@@ -12,8 +12,10 @@ def main():
     year, month, date_ = bday.split('-')
     today = date.today()
     curr_year = today.year
+    if int(month)
     diff = curr_year - int(year)
-    
+
+
 
 
 ...
