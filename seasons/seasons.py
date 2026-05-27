@@ -18,7 +18,8 @@ def main():
     number = days*24*60
     return p.number_to_words(number, andword='')
 
-
+def print():
+    print(main())
 
 
 if __name__ == "__main__":
