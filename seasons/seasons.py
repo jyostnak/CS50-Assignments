@@ -19,7 +19,9 @@ def convert(bday):
     diff = today - bdate
     days = diff.days
     number = days*24*60
-    return f'{p.number_to_words(number, andword='')} minutes'
+    age = p.number_to_words(number, andword='')
+    age = age.capitalize()
+    return f'{age} minutes'
 
 def print():
     print(main())
