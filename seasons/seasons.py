@@ -10,6 +10,8 @@ def main():
     if not re.fullmatch(pattern, bday):
         sys.exit('Invalid date')
     year, month, date_ = bday.split('-')
+    today = date.today()
+    
 
 ...
 
