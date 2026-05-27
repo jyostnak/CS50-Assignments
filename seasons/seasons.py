@@ -6,7 +6,8 @@ import re
 
 def main():
     bday = input("Date of birth: ")
-    pattern = r""
+    pattern = r"\d{4}-\d{2}-\d{2}"
+    match = re.search(pattern, bday)
 
 
 ...
