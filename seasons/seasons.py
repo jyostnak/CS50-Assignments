@@ -3,8 +3,12 @@ import sys
 import inflect
 import re
 
-def main
-def convert():
+def main():
+    bday = input("Date of birth: ")
+    print(convert(bday))
+
+
+def convert(bday):
     p = inflect.engine()
     pattern = r"\d{4}-\d{2}-\d{2}"
     if not re.fullmatch(pattern, bday):
@@ -15,7 +19,7 @@ def convert():
     diff = today - bdate
     days = diff.days
     number = days*24*60
-    return p.number_to_words(number, andword='')
+    return f'{p.number_to_words(number, andword='')} minutes'
 
 def print():
     print(main())
