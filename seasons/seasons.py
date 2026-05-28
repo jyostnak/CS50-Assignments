@@ -14,7 +14,7 @@ def convert(bday):
     if not re.fullmatch(pattern, bday):
         sys.exit('Invalid date')
     year, month, date_ = bday.split('-')
-    today = date.(2000, 1, 1)
+    today = date.today()
     bdate = date(int(year), int(month), int(date_))
     diff = today - bdate
     days = diff.days
@@ -22,9 +22,6 @@ def convert(bday):
     age = p.number_to_words(number, andword='')
     age = age.capitalize()
     return f'{age} minutes'
-
-def print():
-    print(main())
 
 
 if __name__ == "__main__":
