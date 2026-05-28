@@ -14,7 +14,7 @@ def convert(bday):
     if not re.fullmatch(pattern, bday):
         sys.exit('Invalid date')
     year, month, date_ = bday.split('-')
-    today = date.today()
+    today = date.(2000, 1, 1)
     bdate = date(int(year), int(month), int(date_))
     diff = today - bdate
     days = diff.days
