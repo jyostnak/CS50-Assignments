@@ -24,9 +24,13 @@ def get_questions():
                 print(f'{i}. {op}')
         user_ans = input('Answer: ')
         if q["type"] == "bool":
-            user_ans.lower()
-            boole = ['true', 'false']
-            if user_ans not in boole:
-                
+            while True:
+                user_ans.strip().lower()
+                if user_ans in ["true", "false"]:
+                    break
+
+                print("This is a True/False question.")
+                print("Please enter only True or False.")
+
 
 get_questions()
