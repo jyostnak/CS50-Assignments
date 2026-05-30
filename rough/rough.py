@@ -11,5 +11,6 @@ def get_questions():
     response = requests.get(f"https://opentdb.com/api.php?amount={amount}")
     data = response.json
     questions = data['results']
-    print(questions[0]["question"])
+    for q in questions:
+        print(q["question"])
 get_questions()
