@@ -9,8 +9,8 @@ import random
 def get_questions():
     amount = input("How many questions? ")
     response = requests.get(f"https://opentdb.com/api.php?amount={amount}")
-    data = response.json
+    data = response.json()
     questions = data['results']
     for q in questions:
-        print(q["question"])
+        (q["question"])
 get_questions()
