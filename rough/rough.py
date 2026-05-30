@@ -29,9 +29,10 @@ def get_questions():
                     print("Correct answer!")
                     break
                 else:
-                    print("Oops.. Try again!")
-                if i == 3:
-                    print(f"Correct answer: {q["correct_answer"]}")
+                    if i == 3:
+                        print(f"Correct answer: {q["correct_answer"]}")
+                    else:
+                        print("Oops.. Try again!")
 
         if q["type"] == "boolean":
             while True:
