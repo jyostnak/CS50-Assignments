@@ -12,5 +12,4 @@ def get_questions():
     data = response.json()
     questions = data['results']
     for q in questions:
-        (q["question"])
-get_questions()
+        print(q["question"])
