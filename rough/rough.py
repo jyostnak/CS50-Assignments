@@ -46,14 +46,16 @@ def get_questions():
                 i +=1
 
         if q["type"] == "boolean":
-            while True:
-                user_anstf = input("Answer(True/False): ").strip().lower()
-                if user_anstf in ["true", "false"]:
-                    if user_anstf == q["correct_answer"]:
-                        print("Correct answer!")
-                        score += 1
-                    
-                    break
+            i = 0
+            while i <= 3:
+                try:
+                    user_anstf = input("Answer(True/False): ").strip().lower()
+                    if user_anstf in ["true", "false"]:
+                        if user_anstf == q["correct_answer"]:
+                            print("Correct answer!")
+                            score += 1
+
+                        break
 
                 print("This is a True/False question.")
                 print("Please enter only True or False.")
