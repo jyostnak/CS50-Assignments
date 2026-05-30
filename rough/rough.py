@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import random
 
 def get_questions():
+    subject = input("Choose Subject:\n1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n7. Random")
     amount = input("How many questions? ")
     response = requests.get(f"https://opentdb.com/api.php?amount={amount}")
     data = response.json()
