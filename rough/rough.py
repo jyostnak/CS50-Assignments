@@ -22,8 +22,11 @@ def get_questions():
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
-        if q['type'] == 'bool':
-            
         user_ans = input('Answer: ')
+        if q["type"] == "bool":
+            user_ans.lower()
+            boole = ['true', 'false']
+            if user_ans not in boole:
+                
 
 get_questions()
