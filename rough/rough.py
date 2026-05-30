@@ -28,18 +28,19 @@ def get_questions():
                 try:
                     user_ans = int(input('Answer: '))
                     selected_option = options[user_ans - 1]
+                    if user_ans == correct_option:
+                        print("Correct answer!")
+                        break
+                    else:
+                        if i == 3:
+                            print(f"Correct answer: {q["correct_answer"]}")
+                        else:
+                            print("Oops.. Try again!")
                 except ValueError:
                     print("Please enter valid option number.")
                 except IndexError:
                     print("Please enter a valid option number.")
-                if user_ans == correct_option:
-                    print("Correct answer!")
-                    break
-                else:
-                    if i == 3:
-                        print(f"Correct answer: {q["correct_answer"]}")
-                    else:
-                        print("Oops.. Try again!")
+                
                 i +=1
 
         if q["type"] == "boolean":
