@@ -8,10 +8,20 @@ import matplotlib.pyplot as plt
 import random
 
 def get_questions():
-    subject = input("Choose Subject:\n1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n8. Politics
-\n")
+    subject = input("Choose Subject:\n1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n8. Politics\n9. Art\n10. Gadgets")
+    subjects = {
+    1: 19,  # Mathematics
+    2: 18,  # Computer Science
+    3: 17,  # Science & Nature
+    4: 23,  # History
+    5: 22,  # Geography
+    7: 9,   # General Knowledge
+    8: 24,  # Politics
+    9: 25,  # Art
+    10: 30  # Science: Gadgets
+}
     amount = input("How many questions? ")
-    response = requests.get(f"https://opentdb.com/api.php?amount={amount}")
+    response = requests.get(f"https://opentdb.com/api.php?amount={amount}&category={subjects["subject"]}")
     data = response.json()
     questions = data['results']
     score = 0
