@@ -43,7 +43,7 @@ def get_questions():
                 except IndexError:
                     print("Please enter a valid option number.")
 
-                i +=1
+                i += 1
 
         if q["type"] == "boolean":
             i = 0
@@ -54,11 +54,17 @@ def get_questions():
                         if user_anstf == q["correct_answer"]:
                             print("Correct answer!")
                             score += 1
-
-                        break
-
-                print("This is a True/False question.")
-                print("Please enter only True or False.")
+                        else:
+                            if i == 3:
+                                print(f"Correst answer: {q["correct_Answer"]}")
+                            else:
+                                print("Oops.. Try again!")
+                    else:
+                        raise ValueError
+                except ValueError:
+                    print("This is a True/False question.")
+                    print("Please enter only True or False.")
+                i += 1
 
 
 get_questions()
