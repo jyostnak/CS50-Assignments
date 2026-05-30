@@ -28,10 +28,11 @@ def get_questions():
                 if user_ans == q["correct_answer"]:
                     print("Correct answer!")
                     break
-                print("Oops.. Try again!")
+                else:
+                    print("Oops.. Try again!")
                 if i == 3:
-                    print(f"Correct answer: {q[correct_answer]}")
-                    
+                    print(f"Correct answer: {q["correct_answer"]}")
+
         if q["type"] == "boolean":
             while True:
                 user_anstf = input("Answer(True/False): ").strip().lower()
