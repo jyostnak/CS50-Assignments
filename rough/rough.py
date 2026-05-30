@@ -18,7 +18,8 @@ def get_questions():
             options = []
             options.extend(q['incorrect_answers'])
             options.extend(q['correct_answer'])
-            for op in options:
-                print(f'{options.index(op)}. {op}')
+            random.shuffle(options)
+            for i, op in enumerate(options, start = 1):
+                print(f'{i}. {op}')
         user_ans = input('Answer: ')
 
