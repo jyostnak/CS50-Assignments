@@ -50,7 +50,9 @@ def get_questions():
                 user_anstf = input("Answer(True/False): ").strip().lower()
                 if user_anstf in ["true", "false"]:
                     if user_anstf == q["correct_answer"]:
-                        
+                        print("Correct answer!")
+                        score += 1
+                    
                     break
 
                 print("This is a True/False question.")
