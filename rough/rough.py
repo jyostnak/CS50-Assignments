@@ -14,10 +14,10 @@ def get_questions():
     for q in questions:
         print(q["question"])
 
-        if q["type"] == multiple:
+        if q["type"] == 'multiple':
             options = []
-            options.append(q['incorrect_answers'])
-            options.append(q['correct_answer'])
+            options.extend(q['incorrect_answers'])
+            options.extend(q['correct_answer'])
             for op in options:
                 print(f'{options.index(op)}. {op}')
         user_ans = input('Answer: ')
