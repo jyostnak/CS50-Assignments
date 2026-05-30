@@ -22,10 +22,11 @@ def get_questions():
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
+            correct_option = options.index(correct_answer) + 1
             i = 0
             while i <= 3:
                 user_ans = input('Answer: ')
-                if user_ans == q["correct_answer"]:
+                if int(user_ans) == correct_option:
                     print("Correct answer!")
                     break
                 else:
