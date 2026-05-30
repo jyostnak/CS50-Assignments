@@ -25,8 +25,11 @@ def get_questions():
             correct_option = options.index(correct_answer) + 1
             i = 0
             while i <= 3:
-                user_ans = input('Answer: ')
-                if int(user_ans) == correct_option:
+                try:
+                    user_ans = int(input('Answer: '))
+                except ValueError:
+                    print("Please enter valid option number.")
+                if user_ans == correct_option:
                     print("Correct answer!")
                     break
                 else:
