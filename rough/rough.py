@@ -23,7 +23,7 @@ def get_questions():
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
         user_ans = input('Answer: ')
-        if q["type"] == "bool":
+        if q["type"] == "boolean":
             while True:
                 user_ans.strip().lower()
                 if user_ans in ["true", "false"]:
