@@ -23,7 +23,15 @@ def get_questions():
     }
         category = subjects[subject]
         amount = input("How many questions? ")
-        response = requests.get(f"https://opentdb.com/api.php?amount={amount}&category={category}")
+        difficult = input("1.Easy\n2.Medium\n3.Hard\n Choose difficulty: ")
+        difficulties = {
+        "1": "easy",
+        "2": "medium",
+        "3": "hard"
+    }
+
+        difficulty = difficulties[difficult]
+        response = requests.get(f"https://opentdb.com/api.php?amount={amount}&category={category}&difficulty={difficulty}")
         data = response.json()
         questions = data['results']
         score = 0
