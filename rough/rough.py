@@ -48,7 +48,7 @@ def get_questions():
         if q["type"] == "boolean":
                 try:
                     user_anstf = input("Answer(True/False): ").strip().capitalize()
-                    if user_anstf in ["true", "false"]:
+                    if user_anstf in ["True", "false"]:
                         if user_anstf == (q["correct_answer"]):
                             print("Correct answer!")
                             score += 1
