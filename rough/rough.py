@@ -29,6 +29,8 @@ def get_questions():
                     user_ans = int(input('Answer: '))
                 except ValueError:
                     print("Please enter valid option number.")
+                except IndexError:
+                    print("Please enter a valid option number.")
                 if user_ans == correct_option:
                     print("Correct answer!")
                     break
