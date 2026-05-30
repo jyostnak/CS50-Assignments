@@ -8,17 +8,17 @@ import matplotlib.pyplot as plt
 import random
 
 def get_questions():
-    subject = int(input("Choose Subject:\n1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n8. Politics\n9. Art\n10. Gadgets"))
+    subject = int(input("Choose Subject:\n1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n7. Politics\n8. Art\n9. Gadgets"))
     subjects = {
-    1: 19,  # Mathematics
-    2: 18,  # Computer Science
+    1: 18,  # Computer Science
+    2: 19,  #Mathematics
     3: 17,  # Science & Nature
     4: 23,  # History
     5: 22,  # Geography
-    7: 9,   # General Knowledge
-    8: 24,  # Politics
-    9: 25,  # Art
-    10: 30  # Science: Gadgets
+    6: 9,   # General Knowledge
+    7: 24,  # Politics
+    8: 25,  # Art
+    9: 30  # Science: Gadgets
 }
     category = subjects[subject]
     amount = input("How many questions? ")
