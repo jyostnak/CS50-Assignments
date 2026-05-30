@@ -23,3 +23,4 @@ def get_questions():
                 print(f'{i}. {op}')
         user_ans = input('Answer: ')
 
+get_questions()
