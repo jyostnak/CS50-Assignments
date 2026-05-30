@@ -61,6 +61,6 @@ def get_questions():
                 except ValueError:
                     print("This is a True/False question.")
                     print("Please enter only True or False.")
-
+    print(f"Score: {score}/{amount}")
 
 get_questions()
