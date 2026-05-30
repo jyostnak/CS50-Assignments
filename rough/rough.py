@@ -19,6 +19,6 @@ def get_questions():
             options.append(q['incorrect_answers'])
             options.append(q['correct_answer'])
             for op in options:
-                print(f'')
+                print(f'{options.index(op)}. {op}')
         user_ans = input('Answer: ')
 
