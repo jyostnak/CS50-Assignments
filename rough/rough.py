@@ -27,6 +27,7 @@ def get_questions():
             while i <= 3:
                 try:
                     user_ans = int(input('Answer: '))
+                    selected_option = options[user_ans - 1]
                 except ValueError:
                     print("Please enter valid option number.")
                 except IndexError:
