@@ -12,7 +12,13 @@ def get_questions():
     data = response.json()
     questions = data['results']
     for q in questions:
-        if 
         print(q["question"])
+
+        if q["type"] == multiple:
+            options = []
+            options.append(q['incorrect_answers'])
+            options.append(q['correct_answer'])
+            for op in options:
+                print(f'')
         user_ans = input('Answer: ')
 
