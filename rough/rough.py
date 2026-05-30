@@ -22,7 +22,7 @@ def get_questions():
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
-        #user_ans = input('Answer: ')
+            user_ans = input('Answer: ')
         if q["type"] == "boolean":
             while True:
                 user_anstf = input("Answer(True/False): ").strip().lower()
