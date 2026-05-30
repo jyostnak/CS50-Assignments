@@ -22,6 +22,9 @@ def get_questions():
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
+            user_ans = input('Answer: ')
+            if user_ans == q["correct_answer"]:
+                print("Correct answer!")
         if q["type"] == "boolean":
             while True:
                 user_anstf = input("Answer(True/False): ").strip().lower()
@@ -31,6 +34,5 @@ def get_questions():
                 print("This is a True/False question.")
                 print("Please enter only True or False.")
 
-        user_ans = input('Answer: ')
 
 get_questions()
