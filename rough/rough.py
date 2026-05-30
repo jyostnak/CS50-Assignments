@@ -22,7 +22,7 @@ def get_questions():
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
-            correct_option = options.index(correct_answer) + 1
+            correct_option = options.index('correct_answer') + 1
             i = 0
             while i <= 3:
                 try:
