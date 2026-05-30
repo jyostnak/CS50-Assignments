@@ -13,15 +13,17 @@ def get_questions():
     data = response.json()
     questions = data['results']
     for q in questions:
-        print(q["question"])
+        print(html.unescape(q["question"]))
 
         if q["type"] == 'multiple':
             options = []
-            options.extend(q['incorrect_answers'])
-            options.append(q['correct_answer'])
+            options.extend([html.unescape(x) for x in q["incorrect_answers"]])
+            options.append(html.unescape(q['correct_answer']))
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
+        if q['type'] == 'bool':
+            
         user_ans = input('Answer: ')
 
 get_questions()
