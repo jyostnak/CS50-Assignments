@@ -17,7 +17,7 @@ def get_questions():
         if q["type"] == 'multiple':
             options = []
             options.extend(q['incorrect_answers'])
-            options.extend(q['correct_answer'])
+            options.append(q['correct_answer'])
             random.shuffle(options)
             for i, op in enumerate(options, start = 1):
                 print(f'{i}. {op}')
