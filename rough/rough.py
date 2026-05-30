@@ -12,6 +12,7 @@ def get_questions():
     response = requests.get(f"https://opentdb.com/api.php?amount={amount}")
     data = response.json()
     questions = data['results']
+    score = 0
     for q in questions:
         print(html.unescape(q["question"]))
 
@@ -30,6 +31,7 @@ def get_questions():
                     selected_option = options[user_ans - 1]
                     if user_ans == correct_option:
                         print("Correct answer!")
+                        score += 1
                         break
                     else:
                         if i == 3:
@@ -40,13 +42,15 @@ def get_questions():
                     print("Please enter valid option number.")
                 except IndexError:
                     print("Please enter a valid option number.")
-                
+
                 i +=1
 
         if q["type"] == "boolean":
             while True:
                 user_anstf = input("Answer(True/False): ").strip().lower()
                 if user_anstf in ["true", "false"]:
+                    if user_anstf == q["correct_answer"]:
+                        
                     break
 
                 print("This is a True/False question.")
