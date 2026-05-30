@@ -13,3 +13,5 @@ def get_questions():
     questions = data['results']
     for q in questions:
         print(q["question"])
+        user_ans = input('Answer: ')
+        
