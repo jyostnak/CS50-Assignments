@@ -6,6 +6,7 @@ import json
 import requests
 import matplotlib.pyplot as plt
 import random
+import csv
 
 def get_questions():
     try:
@@ -86,3 +87,7 @@ def get_questions():
         print(f"Score: {score}/{amount}")
     except KeyError:
         print("Invalid subject input.")
+
+
+def save_scores():
+    
