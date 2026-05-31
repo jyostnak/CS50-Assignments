@@ -86,4 +86,3 @@ def get_questions():
         print(f"Score: {score}/{amount}")
     except KeyError:
         print("Invalid subject input.")
-get_questions()
