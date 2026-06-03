@@ -7,5 +7,5 @@ def test_calculate_percentage():
     assert calculate_percentage(8, 9) == 8/9*100
 
 
-def test_load_scores():
+def test_fromat_time():
     
