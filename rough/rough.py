@@ -221,23 +221,24 @@ def view_score():
 
 
 def main():
-    print("=== AI STUDY GUIDE ===")
-    try:
-        choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
-        if choice == "1":
-            get_questions()
-        elif choice == "2":
-            get_chart()
-        elif choice == "3":
-            pomodoro_timer()
-        elif choice == "4":
-            view_score()
-        elif choice == "5":
-            pass
-        else:
-            raise KeyError
-    except KeyError:
-        print("Invalid input.")
+    while True:
+        print("=== AI STUDY GUIDE ===")
+        try:
+            choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
+            if choice == "1":
+                get_questions()
+            elif choice == "2":
+                get_chart()
+            elif choice == "3":
+                pomodoro_timer()
+            elif choice == "4":
+                view_score()
+            elif choice == "5":
+                break
+            else:
+                raise KeyError
+        except KeyError:
+            print("Invalid input.")
 
 
 if __name__ == "__main__":
