@@ -132,10 +132,13 @@ def save_scores(score, amount, subject_name, diff):
 
 def load_scores():
     scores = []
-    with open("scores.csv", newline="") as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            scores.append(row)
+    try:
+        with open("scores.csv", newline="") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                scores.append(row)
+    except FileNotFoundError:
+        print("File not found")
     return scores
 
 
