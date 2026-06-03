@@ -204,11 +204,24 @@ def pomodoro_timer():
         print("Please enter a number.")
 
 
+def view_score():
+    scores = load_scores()
+
+    if not scores:
+        print("No scores found.")
+        return
+    for row in scores:
+        print(
+            f"{row["Date"]}"|
+            f"{row[""]"
+        )
+
+
 
 def main():
     print("=== AI STUDY GUIDE ===")
     try:
-        choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.Exit\nWhat would you like to do? ")
+        choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
         if choice == "1":
             get_questions()
         elif choice == "2":
@@ -216,6 +229,8 @@ def main():
         elif choice == "3":
             pomodoro_timer()
         elif choice == "4":
+            view_score()
+        elif choice == "5":
             pass
         else:
             raise KeyError
