@@ -116,7 +116,7 @@ def get_questions():
 def save_scores(score, amount, subject_name, diff):
     date = datetime.today().date().isoformat()
     file_exists = os.path.isfile("scores.csv")
-    with open("score.csv", "a", newline="") as file:
+    with open("scores.csv", "a", newline="") as file:
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(
