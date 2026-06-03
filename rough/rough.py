@@ -108,6 +108,8 @@ def get_questions():
         return score, amount, subject_name, diff
     except KeyError:
         print("Invalid input.")
+    except ValueError:
+        print("Invalid input.")
 
 
 
