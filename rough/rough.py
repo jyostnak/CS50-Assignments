@@ -120,7 +120,7 @@ def save_scores(score, amount, subject_name, diff):
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(
-                ["Date", " Subject", " Difficulty", " Your Score", " Total Questions"]
+                ["Date", "Subject", "Difficulty", "Your Score", "Total Questions"]
             )
         writer.writerow([
             date,
@@ -158,7 +158,7 @@ def get_chart():
         dates.append(row["Date"])
 
         percentage = calculate_percentage(
-            int(row["Your Score "]),
+            int(row["Your Score"]),
             int(row["Total Questions"])
         )
         percentages.append(percentage)
@@ -212,8 +212,10 @@ def view_score():
         return
     for row in scores:
         print(
-            f"{row["Date"]}"|
-            f"{row[""]"
+            f"{row["Date"]}|"
+            f"{row["Subject"]}|"
+            f"{row['Difficulty']} | "
+            f"{row['Your Score']}/{row['Total Questions']}"
         )
 
 
