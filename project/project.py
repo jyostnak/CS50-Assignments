@@ -132,7 +132,7 @@ def save_scores(score, amount, subject_name, diff):
 
 def load_scores():
     scores = []
-    with open("score.csv", newline="") as file:
+    with open("scores.csv", newline="") as file:
         reader = csv.DictReader(file)
         for row in reader:
             scores.append(row)
@@ -150,7 +150,7 @@ def get_chart():
     dates = []
     percentages = []
     for row in scores:
-        dates.append(row["Date "])
+        dates.append(row["Date"])
 
         percentage = calculate_percentage(
             int(row["Your Score "]),
