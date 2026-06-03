@@ -1,4 +1,5 @@
-from project import calculate_percentage
-from project import load_scores
-from project import save_scores
-from project import format_time
+from project import calculate_percentage, load_scores, save_scores, format_time
+import pytest
+
+def test_calculate_percentage():
+    assert 
