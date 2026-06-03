@@ -97,6 +97,7 @@ def get_questions():
                     except ValueError:
                         print("This is a True/False question.")
                         print("Please enter only True or False.")
+
         print(f"Score: {score}/{amount}")
         ask = input("Do you want to save the score? (Yes/No) ").lower()
         if ask in ["yes", "no"]:
@@ -195,7 +196,7 @@ def pomodoro_timer():
 
         print("\nSession complete!")
     except ValueError:
-        ("Please enter a number.")
+        print("Please enter a number.")
 
 
 
