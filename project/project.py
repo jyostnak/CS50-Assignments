@@ -89,7 +89,6 @@ def get_questions():
                             if user_anstf == (q["correct_answer"]):
                                 print("Correct answer!")
                                 score += 1
-                                break
                             else:
                                 print("Uh-ohh.. That was wrong!")
                                 print(f'Correct answer: {q["correct_answer"]}')
@@ -98,6 +97,7 @@ def get_questions():
                     except ValueError:
                         print("This is a True/False question.")
                         print("Please enter only True or False.")
+
         print(f"Score: {score}/{amount}")
         ask = input("Do you want to save the score? (Yes/No) ").lower()
         if ask in ["yes", "no"]:
@@ -108,17 +108,19 @@ def get_questions():
         return score, amount, subject_name, diff
     except KeyError:
         print("Invalid input.")
+    except ValueError:
+        print("Invalid input.")
 
 
 
 def save_scores(score, amount, subject_name, diff):
     date = datetime.today().date().isoformat()
     file_exists = os.path.isfile("scores.csv")
-    with open("score.csv", "a", newline="") as file:
+    with open("scores.csv", "a", newline="") as file:
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(
-                ["Date", " Subject", " Difficulty", " Your Score", " Total Questions"]
+                ["Date", "Subject", "Difficulty", "Your Score", "Total Questions"]
             )
         writer.writerow([
             date,
@@ -132,10 +134,13 @@ def save_scores(score, amount, subject_name, diff):
 
 def load_scores():
     scores = []
-    with open("scores.csv", newline="") as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            scores.append(row)
+    try:
+        with open("scores.csv", newline="") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                scores.append(row)
+    except FileNotFoundError:
+        print("File not found")
     return scores
 
 
@@ -153,7 +158,7 @@ def get_chart():
         dates.append(row["Date"])
 
         percentage = calculate_percentage(
-            int(row["Your Score "]),
+            int(row["Your Score"]),
             int(row["Total Questions"])
         )
         percentages.append(percentage)
@@ -196,26 +201,44 @@ def pomodoro_timer():
 
         print("\nSession complete!")
     except ValueError:
-        ("Please enter a number.")
+        print("Please enter a number.")
+
+
+def view_score():
+    scores = load_scores()
+
+    if not scores:
+        print("No scores found.")
+        return
+    for row in scores:
+        print(
+            f"{row['Date']}|"
+            f"{row['Subject']}|"
+            f"{row['Difficulty']} | "
+            f"{row['Your Score']}/{row['Total Questions']}"
+        )
 
 
 
 def main():
-    print("=== AI STUDY GUIDE ===")
-    try:
-        choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.Exit\nWhat would you like to do? ")
-        if choice == "1":
-            get_questions()
-        elif choice == "2":
-            get_chart()
-        elif choice == "3":
-            pomodoro_timer()
-        elif choice == "4":
-            pass
-        else:
-            raise KeyError
-    except KeyError:
-        print("Invalid input.")
+    while True:
+        print("=== AI STUDY GUIDE ===")
+        try:
+            choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
+            if choice == "1":
+                get_questions()
+            elif choice == "2":
+                get_chart()
+            elif choice == "3":
+                pomodoro_timer()
+            elif choice == "4":
+                view_score()
+            elif choice == "5":
+                break
+            else:
+                raise KeyError
+        except KeyError:
+            print("Invalid input.")
 
 
 if __name__ == "__main__":
