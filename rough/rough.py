@@ -212,8 +212,8 @@ def view_score():
         return
     for row in scores:
         print(
-            f"{row["Date"]}|"
-            f"{row["Subject"]}|"
+            f"{row['Date']}|"
+            f"{row['Subject']}|"
             f"{row['Difficulty']} | "
             f"{row['Your Score']}/{row['Total Questions']}"
         )
