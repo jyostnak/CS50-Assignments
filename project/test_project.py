@@ -42,3 +42,4 @@ def test_load_scores():
 
     assert scores[0]["Subject"] == "Science"
     assert scores[0]["Difficulty"] == "Easy"
+    assert scores[0]["Your Score"] == "8"
