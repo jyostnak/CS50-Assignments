@@ -16,7 +16,7 @@ def test_fromat_time():
 def test_save_scores():
     save_scores(8, 10, "Science", "Easy")
 
-    with open("score.csv", newline="") as file:
+    with open("scores.csv", newline="") as file:
         rows = list(csv.reader(file))
 
     assert rows[-1] == [
