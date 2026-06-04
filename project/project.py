@@ -1,7 +1,6 @@
 from datetime import datetime
 import time
 import html
-import json
 import requests
 import matplotlib.pyplot as plt
 import random
