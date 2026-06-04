@@ -26,3 +26,19 @@ def test_save_scores():
         "8",
         "10"
     ]
+
+
+def test_load_scores():
+    with open("score.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(
+            ["Date", "Subject", "Difficulty", "Your Score", "Total Questions"]
+        )
+        writer.writerow(
+            ["2026-06-04", "Science", "Easy", "8", "10"]
+        )
+
+    scores = load_scores()
+
+    assert scores[0]["Subject"] == "Science"
+    assert scores[0]["Difficulty"] == "Easy"
