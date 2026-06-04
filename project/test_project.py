@@ -8,4 +8,9 @@ def test_calculate_percentage():
 
 
 def test_fromat_time():
-    
+    assert format_time(125) == "02:05"
+    assert format_time(60) == "01:00"
+    assert format_time(9) == "00:09"
+
+
+def test_
