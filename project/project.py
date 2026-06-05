@@ -82,20 +82,22 @@ def get_questions():
                     i += 1
 
             if q["type"] == "boolean":
-                    try:
-                        user_anstf = input("Answer(True/False): ").strip().lower().capitalize()
-                        if user_anstf in ["True", "False"]:
-                            if user_anstf == (q["correct_answer"]):
-                                print("Correct answer!")
-                                score += 1
+                    while True:
+                        try:
+                            user_anstf = input("Answer(True/False): ").strip().lower().capitalize()
+                            if user_anstf in ["True", "False"]:
+                                if user_anstf == (q["correct_answer"]):
+                                    print("Correct answer!")
+                                    score += 1
+                                    break
+                                else:
+                                    print("Uh-ohh.. That was wrong!")
+                                    print(f'Correct answer: {q["correct_answer"]}')
                             else:
-                                print("Uh-ohh.. That was wrong!")
-                                print(f'Correct answer: {q["correct_answer"]}')
-                        else:
-                            raise ValueError
-                    except ValueError:
-                        print("This is a True/False question.")
-                        print("Please enter only True or False.")
+                                raise ValueError
+                        except ValueError:
+                            print("This is a True/False question.")
+                            print("Please enter only True or False.")
 
         print(f"Score: {score}/{amount}")
         ask = input("Do you want to save the score? (Yes/No) ").lower()
