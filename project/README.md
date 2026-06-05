@@ -4,7 +4,7 @@
 
 #### Description:
 
-AI Study Guide is a Python application designed to help students study through quizzes, track their progress, and manage study sessions.
+Smart Study Companion is a Python application designed to help students study through quizzes, track their progress, and manage study sessions.
 
 The program allows users to:
 - Take quizzes from different subjects using the Open Trivia Database API.
