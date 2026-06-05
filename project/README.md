@@ -1,6 +1,6 @@
 # Smart Study Companion
 
-#### Video Demo: <YOUR YOUTUBE VIDEO URL>
+#### Video Demo: <https://youtu.be/CQByC-BuLx8>
 
 #### Description:
 
