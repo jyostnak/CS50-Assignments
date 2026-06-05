@@ -222,7 +222,7 @@ def view_score():
 
 def main():
     while True:
-        print("=== SMART STUDY COMPANION ===")
+        print("\n=== SMART STUDY COMPANION ===")
         try:
             choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
             if choice == "1":
