@@ -38,7 +38,7 @@ def main():
 
 
 def get_questions():
-    while True
+    while True:
         try:
             subject = int(input("1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n7. Politics\n8. Art\n9. Gadgets\nChoose subject:"))
             subjects = {
