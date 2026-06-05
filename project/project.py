@@ -36,7 +36,7 @@ def get_questions():
         subject_name = subject_names[subject]
         category = subjects[subject]
         amount = input("How many questions? ")
-        difficult = input("1.Easy\n2.Medium\n3.Hard\n Choose difficulty: ")
+        difficult = input("1.Easy\n2.Medium\n3.Hard\nChoose difficulty: ")
         difficulties = {
         "1": "easy",
         "2": "medium",
