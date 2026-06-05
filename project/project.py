@@ -38,109 +38,110 @@ def main():
 
 
 def get_questions():
-    try:
-        subject = int(input("1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n7. Politics\n8. Art\n9. Gadgets\nChoose subject:"))
-        subjects = {
-        1: 18,  # Computer Science
-        2: 19,  # Mathematics
-        3: 17,  # Science & Nature
-        4: 23,  # History
-        5: 22,  # Geography
-        6: 9,   # General Knowledge
-        7: 24,  # Politics
-        8: 25,  # Art
-        9: 30  # Science: Gadgets
+    while True
+        try:
+            subject = int(input("1. Computer Science\n2. Mathematics\n3. Science\n4. History\n5. Geography\n6. General Knowledge\n7. Politics\n8. Art\n9. Gadgets\nChoose subject:"))
+            subjects = {
+            1: 18,  # Computer Science
+            2: 19,  # Mathematics
+            3: 17,  # Science & Nature
+            4: 23,  # History
+            5: 22,  # Geography
+            6: 9,   # General Knowledge
+            7: 24,  # Politics
+            8: 25,  # Art
+            9: 30  # Science: Gadgets
+        }
+            subject_names = {
+        1: "Computer Science",
+        2: "Mathematics",
+        3: "Science",
+        4: "History",
+        5: "Geography",
+        6: "General Knowledge",
+        7: "Politics",
+        8: "Art",
+        9: "Gadgets"
     }
-        subject_names = {
-    1: "Computer Science",
-    2: "Mathematics",
-    3: "Science",
-    4: "History",
-    5: "Geography",
-    6: "General Knowledge",
-    7: "Politics",
-    8: "Art",
-    9: "Gadgets"
-}
-        subject_name = subject_names[subject]
-        category = subjects[subject]
-        amount = input("How many questions? ")
-        difficult = input("1.Easy\n2.Medium\n3.Hard\nChoose difficulty: ")
-        difficulties = {
-        "1": "easy",
-        "2": "medium",
-        "3": "hard"
-    }
+            subject_name = subject_names[subject]
+            category = subjects[subject]
+            amount = input("How many questions? ")
+            difficult = input("1.Easy\n2.Medium\n3.Hard\nChoose difficulty: ")
+            difficulties = {
+            "1": "easy",
+            "2": "medium",
+            "3": "hard"
+        }
 
-        difficulty = difficulties[difficult]
-        diff = difficulty.capitalize()
-        response = requests.get(f"https://opentdb.com/api.php?amount={amount}&category={category}&difficulty={difficulty}")
-        data = response.json()
-        questions = data['results']
-        score = 0
-        for q in questions:
-            print(html.unescape(q["question"]))
+            difficulty = difficulties[difficult]
+            diff = difficulty.capitalize()
+            response = requests.get(f"https://opentdb.com/api.php?amount={amount}&category={category}&difficulty={difficulty}")
+            data = response.json()
+            questions = data['results']
+            score = 0
+            for q in questions:
+                print(html.unescape(q["question"]))
 
-            if q["type"] == 'multiple':
-                options = []
-                options.extend([html.unescape(x) for x in q["incorrect_answers"]])
-                options.append(html.unescape(q['correct_answer']))
-                random.shuffle(options)
-                for i, op in enumerate(options, start = 1):
-                    print(f'{i}. {op}')
-                correct_option = options.index(q['correct_answer']) + 1
-                i = 0
-                while i <= 2:
-                    try:
-                        user_ans = int(input('Answer: '))
-                        selected_option = options[user_ans - 1]
-                        if user_ans == correct_option:
-                            print("Correct answer!")
-                            score += 1
-                            break
-                        else:
-                            if i == 2:
-                                print(f"Correct answer: {q["correct_answer"]}")
-                            else:
-                                print("Oops.. Try again!")
-                    except ValueError:
-                        print("Please enter valid option number.")
-                    except IndexError:
-                        print("Please enter a valid option number.")
-
-                    i += 1
-
-            if q["type"] == "boolean":
-                    while True:
+                if q["type"] == 'multiple':
+                    options = []
+                    options.extend([html.unescape(x) for x in q["incorrect_answers"]])
+                    options.append(html.unescape(q['correct_answer']))
+                    random.shuffle(options)
+                    for i, op in enumerate(options, start = 1):
+                        print(f'{i}. {op}')
+                    correct_option = options.index(q['correct_answer']) + 1
+                    i = 0
+                    while i <= 2:
                         try:
-                            user_anstf = input("Answer(True/False): ").strip().lower().capitalize()
-                            if user_anstf in ["True", "False"]:
-                                if user_anstf == (q["correct_answer"]):
-                                    print("Correct answer!")
-                                    score += 1
-                                    break
-                                else:
-                                    print("Uh-ohh.. That was wrong!")
-                                    print(f'Correct answer: {q["correct_answer"]}')
-                                    break
+                            user_ans = int(input('Answer: '))
+                            selected_option = options[user_ans - 1]
+                            if user_ans == correct_option:
+                                print("Correct answer!")
+                                score += 1
+                                break
                             else:
-                                raise ValueError
+                                if i == 2:
+                                    print(f"Correct answer: {q["correct_answer"]}")
+                                else:
+                                    print("Oops.. Try again!")
                         except ValueError:
-                            print("This is a True/False question.")
-                            print("Please enter only True or False.")
+                            print("Please enter valid option number.")
+                        except IndexError:
+                            print("Please enter a valid option number.")
 
-        print(f"Score: {score}/{amount}")
-        ask = input("Do you want to save the score? (Yes/No) ").lower()
-        if ask in ["yes", "no"]:
-            if ask == "yes":
-                save_scores(score, amount, subject_name, diff)
-        else:
-            raise KeyError
-        return score, amount, subject_name, diff
-    except KeyError:
-        print("Invalid input.")
-    except ValueError:
-        print("Invalid input.")
+                        i += 1
+
+                if q["type"] == "boolean":
+                        while True:
+                            try:
+                                user_anstf = input("Answer(True/False): ").strip().lower().capitalize()
+                                if user_anstf in ["True", "False"]:
+                                    if user_anstf == (q["correct_answer"]):
+                                        print("Correct answer!")
+                                        score += 1
+                                        break
+                                    else:
+                                        print("Uh-ohh.. That was wrong!")
+                                        print(f'Correct answer: {q["correct_answer"]}')
+                                        break
+                                else:
+                                    raise ValueError
+                            except ValueError:
+                                print("This is a True/False question.")
+                                print("Please enter only True or False.")
+
+            print(f"Score: {score}/{amount}")
+            ask = input("Do you want to save the score? (Yes/No) ").lower()
+            if ask in ["yes", "no"]:
+                if ask == "yes":
+                    save_scores(score, amount, subject_name, diff)
+            else:
+                raise KeyError
+            return score, amount, subject_name, diff
+        except KeyError:
+            print("Invalid input.")
+        except ValueError:
+            print("Invalid input.")
 
 
 
