@@ -93,6 +93,7 @@ def get_questions():
                                 else:
                                     print("Uh-ohh.. That was wrong!")
                                     print(f'Correct answer: {q["correct_answer"]}')
+                                    break
                             else:
                                 raise ValueError
                         except ValueError:
