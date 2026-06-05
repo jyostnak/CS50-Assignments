@@ -1,4 +1,4 @@
-# AI Study Guide
+# Smart Study Companion
 
 #### Video Demo: <YOUR YOUTUBE VIDEO URL>
 

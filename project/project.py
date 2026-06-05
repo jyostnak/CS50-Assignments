@@ -1,3 +1,9 @@
+# Project name: Smart Study Companion
+# Name: K.Jyostna
+# GitHub username: jyostnak
+# edX username: Jyostnakondepi
+# Hyderabad, India
+# 05-06-2026
 from datetime import datetime
 import time
 import html
@@ -6,6 +12,29 @@ import matplotlib.pyplot as plt
 import random
 import csv
 import os
+
+
+def main():
+    while True:
+        print("\n=== SMART STUDY COMPANION ===")
+        try:
+            choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
+            if choice == "1":
+                get_questions()
+            elif choice == "2":
+                get_chart()
+            elif choice == "3":
+                pomodoro_timer()
+            elif choice == "4":
+                view_score()
+            elif choice == "5":
+                break
+            else:
+                raise KeyError
+        except KeyError:
+            print("Invalid input.")
+
+
 
 
 def get_questions():
@@ -222,26 +251,6 @@ def view_score():
         )
 
 
-
-def main():
-    while True:
-        print("\n=== SMART STUDY COMPANION ===")
-        try:
-            choice = input("\n1.Take quiz\n2.View progress chart\n3.Pomodoro timer\n4.View previous scores\n5.Exit\nWhat would you like to do? ")
-            if choice == "1":
-                get_questions()
-            elif choice == "2":
-                get_chart()
-            elif choice == "3":
-                pomodoro_timer()
-            elif choice == "4":
-                view_score()
-            elif choice == "5":
-                break
-            else:
-                raise KeyError
-        except KeyError:
-            print("Invalid input.")
 
 
 if __name__ == "__main__":
