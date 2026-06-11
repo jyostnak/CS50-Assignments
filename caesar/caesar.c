@@ -15,6 +15,6 @@ int main(int argvc, string argv[])
     int k = atoi(argv);
     string text = get_string("plaintext: ")
     for (int i = 0; i < strlen(text); i++){
-        int c = (text[i] + argv[1]) % 26
+        int c = (text[i] + k) % 26
     }
 }
