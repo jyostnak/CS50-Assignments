@@ -7,8 +7,10 @@
 
 int main(int argvc, string argv[])
 {
-    if !(isdigit(argv[1]))
+    if (!(isdigit(argv[1])) || argc != 2)
     {
-        printf(" ");
+        printf("Usage: ./caesar key");
     }
+
+    int k = 
 }
