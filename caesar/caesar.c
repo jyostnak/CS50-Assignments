@@ -15,6 +15,13 @@ int main(int argvc, string argv[])
     int k = atoi(argv);
     string text = get_string("plaintext: ")
     for (int i = 0; i < strlen(text); i++){
-        int c = (text[i] + k) % 26
+        if (isupper(text[i]))
+        {
+            char c = ((text[i] - 'A' + k) % 26) + 'A';
+        }
+        else if (islower(text[i]))
+        {
+            char c = ((text[i] - 'a' + k) % 26) + 'a';
+        }
     }
 }
