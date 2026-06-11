@@ -13,6 +13,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    printf("ciphertext: ");
+
     for (int i = 0; i < strlen(argv[1]); i++)
     {
         if (!isdigit(argv[1][i]))
@@ -41,4 +43,5 @@ int main(int argc, string argv[])
             printf("%c", text[i]);
         }
     }
+    printf("\n");
 }
