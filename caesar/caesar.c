@@ -12,5 +12,9 @@ int main(int argvc, string argv[])
         printf("Usage: ./caesar key");
     }
 
-    int k = 
+    int k = atoi(argv);
+    string text = get_string("plaintext: ")
+    for (int i = 0; i < strlen(text); i++){
+        
+    }
 }
