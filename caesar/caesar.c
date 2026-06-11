@@ -24,8 +24,8 @@ int main(int argc, string argv[])
         }
     }
 
-    int k = atoi(argv);
-    string text = get_string("plaintext: ")
+    int k = atoi(argv[1]);
+    string text = get_string("plaintext: ");
     for (int i = 0; i < strlen(text); i++)
     {
         if (isupper(text[i]))
