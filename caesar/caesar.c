@@ -7,14 +7,25 @@
 
 int main(int argc, string argv[])
 {
-    if (!(isdigit(argv[1])) || argc != 2)
+    if (argc != 2)
     {
-        printf("Usage: ./caesar key");
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+
+    for (int i = 0; i < strlen(argv[1]); i++)
+    {
+        if (!isdigit(argv[1][i]))
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
     }
 
     int k = atoi(argv);
     string text = get_string("plaintext: ")
-    for (int i = 0; i < strlen(text); i++){
+    for (int i = 0; i < strlen(text); i++)
+    {
         if (isupper(text[i]))
         {
             char c = ((text[i] - 'A' + k) % 26) + 'A';
