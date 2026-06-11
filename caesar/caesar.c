@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-int main(int argvc, string argv[])
+int main(int argc, string argv[])
 {
     if (!(isdigit(argv[1])) || argc != 2)
     {
