@@ -18,10 +18,16 @@ int main(int argvc, string argv[])
         if (isupper(text[i]))
         {
             char c = ((text[i] - 'A' + k) % 26) + 'A';
+            printf("%c", c);
         }
         else if (islower(text[i]))
         {
             char c = ((text[i] - 'a' + k) % 26) + 'a';
+            printf("%c", c);
+        }
+        else
+        {
+            printf("%c", text[i]);
         }
     }
 }
