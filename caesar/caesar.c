@@ -7,5 +7,8 @@
 
 int main(int argvc, string argv[])
 {
-    
+    if !(isdigit(argv[1]))
+    {
+        printf(" ");
+    }
 }
