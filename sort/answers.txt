@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: The runtime is very low in case of sorted data.
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: It takes very less runtime compared to other sort files.
 
-sort3 uses: TODO
+sort3 uses: Selection sort
 
-How do you know?: TODO
+How do you know?: It takes almost the same time in all types of data when compared to other sort files.
