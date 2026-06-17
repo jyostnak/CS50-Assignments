@@ -28,14 +28,14 @@ int main(int argc, char *argv[])
         (buffer[3] & 0xf0) == 0xe0)
         {
             // If we're already writing a JPEG,
+            // close it before starting a new one
             if (img != NULL)
             {
             fclose(img);
             }
-            // close it before starting a new one
 
             // Create filename: 000.jpg, 001.jpg, ...
-
+            
             // Open the new JPEG file
 
             // Increase jpg_count
