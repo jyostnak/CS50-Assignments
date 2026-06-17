@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 
             // Create filename: 000.jpg, 001.jpg, ...
             char filename[8];
+            
             // Open the new JPEG file
 
             // Increase jpg_count
