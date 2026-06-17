@@ -93,5 +93,31 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j];
         }
     }
+    // Blur each pixel
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int redSum = 0;
+            int greenSum = 0;
+            int blueSum = 0;
+            int count = 0;
+            for (int row = i - 1; row <= i + 1; row++)
+            {
+                for (int col = j - 1; col <= j + 1; col++)
+                {
+                    if (row >= 0 && row < height && col >= 0 && col < width)
+                    {
+                        redSum += copy[row][col].rgbtRed;
+                        greenSum += copy[row][col].rgbtGreen;
+                        blueSum += copy[row][col].rgbtBlue; count++;
+                    }
+                }
+            }
+            image[i][j].rgbtRed = round((float) redSum / count);
+            image[i][j].rgbtGreen = round((float) greenSum / count);
+            image[i][j].rgbtBlue = round((float) blueSum / count);
+        }
+    }
     return;
 }
