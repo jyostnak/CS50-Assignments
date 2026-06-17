@@ -26,23 +26,23 @@ int main(int argc, char *argv[])
         buffer[1] == 0xd8 &&
         buffer[2] == 0xff &&
         (buffer[3] & 0xf0) == 0xe0)
-    {
-        // If we're already writing a JPEG,
-        if (img != NULL)
-    {
-        fclose(img);
-    }
-        // close it before starting a new one
+        {
+            // If we're already writing a JPEG,
+            if (img != NULL)
+            {
+            fclose(img);
+            }
+            // close it before starting a new one
 
-        // Create filename: 000.jpg, 001.jpg, ...
+            // Create filename: 000.jpg, 001.jpg, ...
 
-        // Open the new JPEG file
+            // Open the new JPEG file
 
-        // Increase jpg_count
-    }
+            // Increase jpg_count
+        }
 
-    // If a JPEG file is currently open,
-    // write this 512-byte block to it
+        // If a JPEG file is currently open,
+        // write this 512-byte block to it
     }
 }
-}
+
