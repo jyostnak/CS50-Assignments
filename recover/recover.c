@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -36,14 +37,21 @@ int main(int argc, char *argv[])
 
             // Create filename: 000.jpg, 001.jpg, ...
             char filename[8];
-            
+            sprintf(filename, "%03i.jpg", jpg_count);
             // Open the new JPEG file
-
+            img = fopen(filename, "w");
             // Increase jpg_count
+            jpg_count++;
         }
 
         // If a JPEG file is currently open,
         // write this 512-byte block to it
+        if (img != NULL)
+        {
+            fwrite(buffer, 1, 512, img);
+        }
     }
+    fclose(img);
+    fclose(card);
 }
 
