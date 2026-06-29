@@ -1,6 +1,6 @@
 # CS50-Assignments
 
-Solutions to Harvard's CS50P assignments, showcasing my Python programming journey and problem-solving abilities.
+Solutions to Harvard's CS50 assignments, showcasing my Python programming journey and problem-solving abilities.
 
 ## Topics Covered
 - Functions
